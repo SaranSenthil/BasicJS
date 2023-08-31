@@ -44,3 +44,47 @@ for(let i=0; i<data.length;i++)
 //2..Object creataion
 //3.connection open
 //4.load and send 
+
+//Hoisting  Variable and function hoisting and scope
+//declaration: telling the compiler the varible is here
+// let x; //declared not defined
+// console.log(x);
+// x=10;//defined
+// console.log(x);
+
+//Another type of declaration
+// console.log(x);
+// let x; //Throw error as ReferenceError: Cannot access 'x' before initialization
+
+//Hoisting declaration - variable and fun declaration are moved to the top of the scope.
+//Uses-we can use variable and function before they declared.
+x=5;
+console.log(x);
+var x=10;
+console.log(x);
+
+//Var - not recommended , reason: 1.unexpected behaviour, 
+// arrow Function declaration - example for non hoisting throw error
+// sayhello();
+
+// let sayhello=( )=>{
+// console.log('hello');
+// }
+
+//function hoisting
+sayhello1();
+ function sayhello1()
+ {
+    console.log('hello');
+ }
+
+ //Scope  refers to the visibility and accessbility of function and objects
+  //global scope
+
+  let word="apple";//global scope
+   function m1(){
+let word="as" // Local scope
+console.log(word);
+   }
+   m1();
+   console.log(word);
