@@ -1,3 +1,15 @@
+Title: Class 
+Contents:
+var vs let vs const
+block scoping
+spread & rest operators
+array & object destructure
+Object property shorthand
+Template literals
+Arrow functions
+
+
+Task List
 1.For the given JSON iterate over all for loops(for in of, each)
 2.Create your own resume data in Json Format
 3.Diff between object and window screen
