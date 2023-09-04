@@ -1,0 +1,14 @@
+Contents:
+Understanding the basics of prototype
+What is classes in js?
+constructor
+need of setters/getters
+use of this key word in classe
+
+
+OOPS TASK 
+
+https://github.com/rvsp/typescript-oops/blob/master/Practice/Movie.md
+https://github.com/rvsp/typescript-oops/blob/master/Practice/class-circle.md
+Write a “person” class to hold all the details.
+write a class to calculate the uber price.
