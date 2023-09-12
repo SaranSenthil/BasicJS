@@ -1,0 +1,17 @@
+Contents:
+What is CSS?
+ways to use CSS 
+property & value 
+class vs id 
+use of important 
+display property: inline, block 
+
+Day22:
+Contents:
+Intro to pseudo-classes (link, visited,hover, active)
+box model: padding, margin, border 
+Grid
+Flex - display, direction, wrap, flex-flow, justify-content, align-content
+position property: fixed, static, relative, absolute, sticky
+parent inherit 
+gradient
