@@ -1,0 +1,14 @@
+Contents:
+What is RWD?Responsive Web design
+web page will render on variety of devices and diff screen/devices
+What is the mobile-first approach?
+    -Design Strategy
+    -From where u need to start designing the website/webpage/application for mobile devices and eventually enhance for larger screen
+Bootstrap - Css framework and tailwindcss and foundation framework
+components - tailwindui
+ - How to set up bootstrap?
+ - What is the layout?
+ - what is container, container-fluid & container with breakpoints?
+ - What is a grid in Bootstrap?
+ - what is a column prefix & its use and maximum columns for a row?
+ - how to do nested columns and column ordering?

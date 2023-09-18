@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous">
+        <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+        <style>
+  .required:after{
+  content:"*";
+  color:red;
+  }
+  .input-group-text{    
+    background-color:white;
+  }
+  .row{
+    padding: 8px;
+  }
+  .ratings{
+    margin-top:10px;
+}
+  .ratings i{
+    color:#cecece;
+    font-size:28px;
+}
+
+.rating-color{
+    color:#fbc634 !important;
+}
+  </style>
+    </head>
+    <body>
+
+        <div class="container mt-3">
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <div class="required">
+                            <label class="control-label ">
+                                Name
+                            </label>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="form-control">
+                            <span class="input-group-text">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </div>
+                        <div>
+                            <label for="pwd">First</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label></label>
+                        <input class="form-control">
+                        <label for="pwd">last</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="required">
+                        <label class="control-label ">
+                            Email
+                        </label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control"
+                            name="usrname">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="required">
+                        <label class="control-label " for="email">
+                            Your Experience
+                        </label>
+                    </div>
+                    <div class="ratings">
+                        <i class="fa fa-star rating-color"></i>
+                        <i class="fa fa-star rating-color"></i>
+                        <i class="fa fa-star rating-color"></i>
+                        <i class="fa fa-star rating-color"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="control-label">
+                        Overall, how would you rate your experience with us?
+                    </label>
+                </div>
+                <div class="row">
+                    <div class="required">
+                        <label class="control-label " style="font-weight:bold;">
+                            How satisfied are you with
+                        </label>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th> </th>
+                                <th>Very Unsatisfied</th>
+                                <th>Unsatisfied</th>
+                                <th>Netural</th>
+                                <th>Satisfied</th>
+                                <th>Very satisfied</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Purchase</td>
+                                <td>
+                                    <input class="form-check-input"
+                                        type="radio">
+                                </td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                            </tr>
+                            <tr>
+                                <td>Service</td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                            </tr>
+                            <tr>
+                                <td>Company Overall</td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="required">
+                        <label class="control-label " style="font-weight:bold;">
+                            How likely are you to
+                        </label>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th> </th>
+                                <th>Very Unlikely</th>
+                                <th>Unlikely</th>
+                                <th>Netural</th>
+                                <th>likely</th>
+                                <th>Very likely</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Buy from us again</td>
+                                <td>
+                                    <input class="form-check-input"
+                                        type="radio">
+                                </td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                            </tr>
+                            <tr>
+                                <td style="word-wrap:break-word">Recommmed
+                                    our
+                                    product to others</td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                            </tr>
+                            <tr>
+                                <td>Recommend our company to others</td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                                <td><input class="form-check-input"
+                                        type="radio"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="comment" style="font-weight: bold ;">Additional
+                            Comments or Suggestions
+                            :</label>
+                        <textarea class="form-control" rows="5" id="comment"
+                            name="text"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <!-- Bootstrap External JS link -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+    </body>
+</html>

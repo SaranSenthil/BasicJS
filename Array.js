@@ -14,7 +14,7 @@ inp.on("line", (data) => {
 inp.on("close", () => {
     //Code Starts Here
     //Sort the array and print elements in increasing frequency order. 
-    //1.input Handling
+    //1.input Handling 
     //To see whats in the Input
     console.log(userInput);
    //To check type of and convert into number
