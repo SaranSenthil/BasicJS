@@ -1,0 +1,20 @@
+What is DOM?
+createElement, 
+setAttribute
+getElementById, 
+querySelector vs querySelectorAll
+innerHTML vs innerText
+appendChild vs append
+
+
+Contents:
+Window - Common Util functions
+setTimeout vs setInterval
+prompt, Alert, Confirm
+working with events
+
+Task list:
+Task: (mandatory to complete any 2) :design below task using dom manipulation (details attached in nrms162 mail)
+Pagination: https://docs.google.com/document/d/1O8yVCwB_GaY5rZK1_mNkZ9GeYJLeom_dYmcVN3Mb2ws/edit 
+calculator: https://docs.google.com/document/d/1VyZJG0KZAoZEs3h_lpP65XPekNqsbFp8bouOZSWsOTc/edit
+HTML Forms: https://docs.google.com/document/d/1I8qIE7_ri5Q_1QqkxJ7rdlRmGnWWW7zCa7BXrwAi8hI/edit

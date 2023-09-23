@@ -1,0 +1,22 @@
+Pre-read:
+https://www.freecodecamp.org/news/javascript-callback-functions-what-are-callbacks-in-js-and-how-to-use-them/
+
+contents:
+
+Callback
+What's the callback? - call stack, web API, event loop, queue
+Use & its purpose of the callback
+Pain of callback
+Session reference  - http://latentflip.com/loupe/
+
+Today task:
+
+1.Display countdown from 10 to 1 on the screen and then display happy day on the screen.
+
+use call back hell to deploy timer.
+
+Basic hints to solve website:
+1.https://html.spec.whatwg.org/multipage/
+2.https://www.w3.org/Style/CSS/Overview.en.html
+3.http://callbackhell.com/
+4

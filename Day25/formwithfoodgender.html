@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML Forms</title>
+        <style>
+            * {
+  box-sizing: border-box;
+}
+        /* Style for the table */
+        table {
+            border-collapse: collapse;
+            width:100%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid rgb(55, 53, 53);
+            padding: 8px;
+            text-align: left;
+        }
+        tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #04AA6D;
+  color: white;
+}
+input[type=text] {
+  width: 80%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+input[type=number] {
+  width: 80%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: rgb(37, 37, 150);
+  color: white;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #8394d7;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 40px;
+}
+
+.col-25 {
+  float: left;
+  width: 20%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 8px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Contact Form</h2>
+            <form id="myForm">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="name">First Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="name" name="name"
+                            placeholder="Your name.." required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="lname">Last Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="lname" name="lname"
+                            placeholder="Last name.." required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="address">Address</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="address" name="address"
+                            placeholder="Address" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="pincode">Pincode</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="number" id="pincode" name="pincode"
+                            placeholder="Pincode" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="gender">Gender</label>
+                    </div>
+                    <div class="col-30">
+                        <input type="radio" id="male" name="gender"
+                            value="Male"> Male
+                        <input type="radio" id="female" name="gender"
+                            value="Female"> Female
+                        <br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="food">Choice of Food (Select at least 2)
+                        </label>
+                    </div>
+                    <div class="col-75">
+
+                        <input type="checkbox" id="idli" name="food"
+                            value="Idli"> Idli
+                        <br>
+                        <input type="checkbox" id="Poori" name="food"
+                            value="Poori"> Poori
+                        <br>
+                        <input type="checkbox" id="briyani" name="food"
+                            value="Briyani"> Briyani
+                        <br>
+                        <input type="checkbox" id="sushi" name="food"
+                            value="Sushi"> Sushi
+                        <br>
+                        <input type="checkbox" id="salad" name="food"
+                            value="Salad"> Salad
+                        <br>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="state">State</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="state" name="state"
+                                placeholder="State" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="country">Country</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="country" name="country"
+                                placeholder="Country" required>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+
+            <table id="dataTable">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>Pincode</th>
+                    <th>Gender</th>
+                    <th>Choice of Food</th>
+                    <th>State</th>
+                    <th>Country</th>
+                </tr>
+            </table>
+
+            <script>
+       document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("myForm");
+    const table = document.getElementById("dataTable");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Get form values
+        const name = document.getElementById("name").value;
+        const lastname = document.getElementById("lname").value;
+        const address = document.getElementById("address").value;
+        const pincode = document.getElementById("pincode").value;      
+        
+        const state = document.getElementById("state").value;
+        const country = document.getElementById("country").value; 
+        // Get form values
+        const genderRadioButtons = document.getElementsByName("gender");
+                let selectedGender = "";
+                // Find the selected gender
+                for (const radioButton of genderRadioButtons) {
+                    if (radioButton.checked) {
+                        selectedGender = radioButton.value;
+                        break;
+                    }
+                }       
+                //For food selection
+        const foodCheckboxes = document.getElementsByName("food");
+        const selectedFood = [];
+        // Loop through checkboxes to find selected ones
+        for (const checkbox of foodCheckboxes) {
+            if (checkbox.checked) {
+                selectedFood.push(checkbox.value);
+            }
+        }
+   // Check if at least 2 food options are selected
+   if (selectedFood.length < 2) {
+    alert("Please select at least 2 food options.");
+    return;
+}
+
+// Create a comma-separated string of selected food options
+const foodChoices = selectedFood.join(", ");
+
+
+
+        // Create a new row in the table
+        const row = table.insertRow(-1);
+        const cell1 = row.insertCell(0);
+        const cell2 = row.insertCell(1);
+        const cell3 = row.insertCell(2);
+        const cell4 = row.insertCell(3);
+        const cell5 = row.insertCell(4);
+        const cell6 = row.insertCell(5);
+        const cell7 = row.insertCell(6);
+        const cell8 = row.insertCell(7);
+        
+
+        // Populate the new row with form values
+        cell1.innerHTML = name;
+        cell2.innerHTML = lastname;
+        cell3.innerHTML = address;
+        cell4.innerHTML=pincode;
+        cell5.innerHTML =selectedGender
+        cell6.innerHTML=foodChoices;
+        cell7.innerHTML=state;
+        cell8.innerHTML=country;
+        // Clear the form inputs
+        form.reset();
+    });
+});
+    </script>
+            <script
+                src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
+        </body>
+    </html>
