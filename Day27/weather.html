@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>Country Info and Weather</title>
+    </head>
+    <body>
+
+        <div class="container">
+            <h1>Country Info and Weather</h1>
+            <div class="row" id="cardRow">
+                <!-- Cards will be added here dynamically -->
+            </div>
+
+            <div id="weatherContainer">
+                <!-- Weather data will be displayed here -->
+
+            </div>
+        </div>
+
+        <script>
+    // Function to create a Bootstrap card for a country
+    function createCountryCard(country) {
+        const cardColumn = document.createElement('div');
+        cardColumn.className = 'col-md-4';
+
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        const cardHeader = document.createElement('div');
+        cardHeader.className = 'card-header';
+        cardHeader.textContent = country.name;
+
+        const cardBody = document.createElement('div');
+        cardBody.className = 'card-body';
+
+        const countryCode = document.createElement('p');
+        countryCode.textContent = `Country Code: ${country.alpha2Code}`;
+
+        const flagImg = document.createElement('img');
+        flagImg.className = 'card-img-top';
+        flagImg.src = country.flags.png;
+        flagImg.alt = `Flag of ${country.name}`;
+
+        const weatherButton = document.createElement('button');
+        weatherButton.className = 'btn btn-primary';
+        weatherButton.textContent = 'Get Weather';
+
+        weatherButton.addEventListener('click', () => {
+            fetchWeatherData(country.capital);
+        });
+
+        cardBody.appendChild(countryCode);
+        cardBody.appendChild(flagImg);
+       // cardBody.appendChild(weatherButton);
+        card.appendChild(cardHeader);
+        card.appendChild(cardBody);
+        cardColumn.appendChild(card);
+
+        return cardColumn;
+    }
+
+    // Function to fetch and display weather data for a given city (capital)
+    function fetchWeatherData(city) {
+        // Replace 'YOUR_OPENWEATHERMAP_API_KEY' with your actual API key
+        const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY';
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(weatherData => {
+                displayWeatherData(city, weatherData);
+            })
+            .catch(error => {
+                console.error('Error fetching weather data:', error);
+            });
+
+                }
+                
+                  
+    // Function to display weather data
+    function displayWeatherData(city, weatherData) {
+        const weatherInfo = document.createElement('p');
+        weatherInfo.textContent = `Current Weather in ${city}: ${weatherData.weather[0].description}, Temperature: ${weatherData.main.temp}°C`;
+
+        const weatherContainer = document.getElementById('weatherContainer');
+        weatherContainer.innerHTML = ''; // Clear previous weather data
+        weatherContainer.appendChild(weatherInfo);
+    }
+
+    // Function to fetch country data from REST Countries API
+    function fetchCountryData() {
+        fetch('https://restcountries.com/v3.1/all')
+            .then(response => response.json())
+            .then(countryData => {
+                const cardRow = document.getElementById('cardRow');
+                countryData.forEach(country => {
+                    const card = createCountryCard(country);
+                    cardRow.appendChild(card);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching country data:', error);
+            });
+    }
+
+    // Call the function to fetch country data
+    fetchCountryData();
+</script>
+    </body>
+</html>

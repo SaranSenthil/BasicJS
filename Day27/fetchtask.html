@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>Country Cards</title>
+    </head>
+    <body>
+
+        <div class="container">
+            <h1>Country Cards</h1>
+            <div class="row" id="cardRow">
+                <!-- Cards will be added here dynamically -->
+                <p id="jokeText"></p>
+            </div>
+        </div>
+
+        <script>
+    // Function to create a Bootstrap card for a country
+    function createCountryCard(country) {
+        const cardColumn = document.createElement('div');
+        cardColumn.className = 'col-md-4';
+
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        const cardHeader = document.createElement('div');
+        cardHeader.className = 'card-header';
+        cardHeader.textContent = country.name;
+
+        const cardBody = document.createElement('div');
+        cardBody.className = 'card-body';
+
+        const button = document.createElement('button');
+        button.className = 'btn btn-primary';
+        button.textContent = 'Get Weather';
+
+        button.addEventListener('click', () => {
+            // Fetch weather data when the button is clicked
+            //fetchWeatherData(country);
+        });
+
+        cardBody.appendChild(button);
+        card.appendChild(cardHeader);
+        card.appendChild(cardBody);
+        cardColumn.appendChild(card);
+
+        return cardColumn;
+    }
+
+    // Function to fetch weather data for a country
+    function fetchWeatherData(country) {
+        // Replace 'YOUR_OPENWEATHERMAP_API_KEY' with your actual API key
+        const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY';
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${country.capital}&appid=${apiKey}`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(weatherData => {
+                alert(`Weather in ${country.capital}, ${country.name}: ${weatherData.weather[0].description}`);
+            })
+            .catch(error => {
+                console.error('Error fetching weather data:', error);
+            });
+    }
+
+    // Function to fetch country data from REST Countries API
+    function fetchCountryData() {
+        fetch('https://restcountries.com/v3.1/all')
+            .then(response => response.json())
+        
+            .then(countryData => {
+                let neededCountries = ['Italy', 'Norway', 'Kuwait', 'India'];
+                const cardRow = document.getElementById('cardRow');
+                countryData.forEach(country => {
+                    if (neededCountries.includes(country.name.common)) {
+                    const card = createCountryCard(country.name.common);
+                    cardRow.appendChild(card);
+                    jokeText.textContent = country.value;
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching country data:', error);
+            });
+    }
+  
+    // Call the function to fetch country data
+    fetchCountryData();
+</script>
+    </body>
+</html>

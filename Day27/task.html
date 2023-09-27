@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>API Data Cards</title>
+    </head>
+    <body>
+
+        <div class="container">
+            <h1>API Data Cards</h1>
+            <div class="row" id="cardRow">
+                <!-- Cards will be added here dynamically -->
+            </div>
+        </div>
+
+        <script>
+    // Function to create a Bootstrap card
+    function createCard(data) {
+        const cardColumn = document.createElement('div');
+        cardColumn.className = 'col-md-4';
+
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        const cardHeader = document.createElement('div');
+        cardHeader.className = 'card-header';
+        cardHeader.textContent = data.title; // Replace with actual API data
+
+        const cardBody = document.createElement('div');
+        cardBody.className = 'card-body';
+        cardBody.textContent = data.content; // Replace with actual API data
+
+        const button = document.createElement('button');
+        button.className = 'btn btn-primary';
+        button.textContent = 'Button'; // You can customize the button label
+
+        card.appendChild(cardHeader);
+        card.appendChild(cardBody);
+        card.appendChild(button);
+        cardColumn.appendChild(card);
+
+        return cardColumn;
+    }
+    // fetch('https://restcountries.com/v3.1/all')
+    // .then(response => response.json())
+    // .then(countries => {
+    //     let countryNames = [];
+
+    //     countries.forEach(country => {
+    //         countryNames.push(country.name.common);
+    //     })
+
+    //     let neededCountries = ['Italy', 'Norway', 'Kuwait', 'India'];
+
+    //     countries.forEach(country => {
+    //         if (neededCountries.includes(country.name.common)) {
+    //             console.log(country.name.common + ' ' + country.flag);
+    //         }
+    //     })
+    // });
+
+    fetch('https://restcountries.com/v3.1/all')
+    .then(response => response.json())
+    .then(countries => {
+        let countryNames = [];
+
+        countries.forEach(country => {
+            countryNames.push(country.name.common);
+        })
+
+        let neededCountries = ['Italy', 'Norway', 'Kuwait', 'India'];
+
+        countries.forEach(country => {
+            if (neededCountries.includes(country.name.common)) {
+                console.log(country.name.common + ' ' + country.flag);
+                 // Simulate API data
+         }
+;        })
+    });
+
+
+    const apiData = [
+        {
+            title:' '  ,
+            content: 'Card 1 Content'
+        },
+        {
+            title: 'Card 2 Header',
+            content: 'Card 2 Content'
+        },
+        {
+            title: 'Card 3 Header',
+            content: 'Card 3 Content'
+        }
+    ];
+       
+
+    // Add cards to the DOM
+    const cardRow = document.getElementById('cardRow');
+    apiData.forEach(data => {
+        const card = createCard(data);
+        cardRow.appendChild(card);
+    });
+</script>
+    </body>
+</html>

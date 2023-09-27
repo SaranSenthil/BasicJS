@@ -1,0 +1,18 @@
+Contents:
+Promise
+ - What is a promise?
+ - Promise States
+ - Promise chain
+ - promise.all()
+ - Use of fetch() & then()
+
+task:
+Rest countries and weather fetching apis (check nrms mail for further reference)
+
+promise
+
+its a js object that represents a eventual completion or failure of async operation.
+
+async- work independently without blocking the running of other task.
+
+example async:  network req ans reading file from desk.
