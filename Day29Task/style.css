@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Electrolize&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 40;
+  padding: 20;
+}
+
+body {
+  display: flex;
+  /* background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(0, 0, 0, 0.15) 100%
+    ),
+    radial-gradient(
+        at top center,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(0, 0, 0, 0.4) 120%
+      )
+      #989898; */
+  background-blend-mode: multiply, multiply;
+  font-family: "Open Sans", sans-serif;
+}
+
+/*styling card*/
+.card-box {
+  margin-top: 40px;
+  background-image: linear-gradient(-20deg, #eee2f3 0%, #21d4fd 100%);
+  color: rgb(9, 8, 8);
+  padding: 30px;
+  border-radius: 20px;
+  /* width: 450px; */
+  display: flex;
+  /* margin: 1em; */
+  box-shadow: rgb(213, 227, 243) 0px 20px 30px -10px;
+}
+.row .container1 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-image: linear-gradient(-20deg, #eee2f3 0%, #e1a50f 100%);
+  color: rgb(9, 8, 8);
+  border-radius: 10px;
+}
+.tcontainer {
+  margin-top: 40px;
+  background-image: linear-gradient(-20deg, #eee2f3 0%, #0fe16a 100%);
+  color: rgb(9, 8, 8);
+
+  border-radius: 10px;
+  /* width: 450px; */
+  display: flex;
+  /* margin: 1em; */
+  box-shadow: rgb(213, 227, 243) 0px 20px 30px -10px;
+}
+.search_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button_icon {
+  margin: 0.5em;
+  /*border-radius: 50%;*/
+  border: none;
+  height: 44px;
+  width: 52px;
+  font-size: 16px;
+  outline: none;
+  color: black;
+  background: linear-gradient(to bottom, #d5dee7 0%, #e8ebf2 50%, #e2e7ed 100%),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.02) 50%,
+      rgba(255, 255, 255, 0.02) 61%,
+      rgba(0, 0, 0, 0.02) 73%
+    ),
+    linear-gradient(33deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  background-blend-mode: normal, color-burn;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+input.search-bar {
+  color: black;
+  font-family: inherit;
+  font-size: 22px;
+  width: 300px;
+  height: 33px;
+}
+
+/*Styling placeholder*/
+input.search-bar::placeholder {
+  color: gray;
+}
+
+button:hover {
+  background: black;
+  color: white;
+}
+
+.wheather {
+  width: 80vh;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.city {
+  font-size: 35px;
+  text-align: center;
+  font-family: "Electrolize", sans-serif;
+}
+
+.wheather img {
+  margin-left: 80px;
+  /* padding: 20px 0px; */
+  height: 100px;
+  width: 90px;
+}
+
+.description {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.day {
+  display: flex;
+  font-size: 20px;
+}
